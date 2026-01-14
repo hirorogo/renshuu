@@ -11,7 +11,7 @@ headers = {
 
 for i in range(1000000):
     code = f"{i:06}"
-    
+
     payload = {
         "Code": code,
         "IsEmbeddedInFrame": "false",
@@ -32,3 +32,4 @@ for i in range(1000000):
     except Exception as e:
         print(f"エラー: {e}")
         break
+    import os 
