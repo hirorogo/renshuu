@@ -1,4 +1,4 @@
-function gen() {
+const gen = () => {
 
     const dives = document.querySelectorAll("div")
     dives.forEach(element => {
