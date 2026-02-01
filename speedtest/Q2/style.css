@@ -1,0 +1,46 @@
+body {
+    grid-row: inherit;
+
+}
+
+div {
+    align-items: center;
+
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+
+}
+
+.circle:nth-child(2n) {
+    background-color: red;
+
+}
+
+.circle:nth-child(3n) {
+    background-color: blue;
+
+}
+
+.circle:nth-child(4n) {
+    background-color: lightblue;
+}
+
+.circle:nth-child(5n) {
+    background-color: rgb(0, 128, 86);
+}
+
+.round {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    grid-template-rows: repeat(3, 150px);
+
+}

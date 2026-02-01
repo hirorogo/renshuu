@@ -1,0 +1,27 @@
+.boxes {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 40px;
+    align-items: center;
+    justify-self: center;
+}
+
+.box {
+    display: flex;
+
+    width: 80px;
+    height: 80px;
+    border: solid 2px;
+}
+
+.box p {
+    align-items: center;
+    justify-self: center;
+}
+
+.box:active {
+    border: solid 4px;
+    background-color: yellow;
+
+}
